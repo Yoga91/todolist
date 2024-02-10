@@ -45,7 +45,7 @@ class ToDoList:
                 self.masukkan_tugas(task)
                 print("Tugas berhasil dimasukkan !")
             elif pilihan == '2':
-                print("\n==== Tugas Anda ====")
+                print("\n==== Tugas Anda ====\n")
                 self.lihat_tugas()
             elif pilihan == '3':
                 print("Keluar dari daftar tugas. Selamat mengerjakan!")
