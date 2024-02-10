@@ -19,7 +19,7 @@ class ToDoList:
         self.conn.commit()
 
     def masukkan_tugas(self, task):
-        created_at = datetime.now()
+        created_at = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         query = "INSERT INTO tasks (task, created_at) VALUES (?, ?);"
         self.conn.execute(query, (task, created_at))
         self.conn.commit()
@@ -41,11 +41,11 @@ class ToDoList:
             pilihan = input("Masukkan pilihanmu (1/2/3): ")
 
             if pilihan == '1':
-                task = input("Enter the task: ")
+                task = input("Masukkan Tugas : ")
                 self.masukkan_tugas(task)
-                print("Task added successfully!")
+                print("Tugas berhasil dimasukkan !")
             elif pilihan == '2':
-                print("\n==== Your Tasks ====")
+                print("\n==== Tugas Anda ====")
                 self.lihat_tugas()
             elif pilihan == '3':
                 print("Keluar dari daftar tugas. Selamat mengerjakan!")
